@@ -32,7 +32,7 @@ class Schedule {
         // Convert back to String
         val stringLimitedFreeTime = toStringTimeSchedules(limitedFreeTime)
         println(stringLimitedFreeTime)
-    }
+    } // Time complexity: O(n+m) / Space complexity: O(n+m)
 
     private fun toIntTimeSchedules(schedules: List<List<String>>): List<List<Int>> {
         val result = mutableListOf<List<Int>>()
@@ -40,16 +40,16 @@ class Schedule {
             result.add(toIntTimeSchedule(schedule))
         }
         return result
-    }
+    } // Time complexity: O(n) / Space complexity: O(n)
 
     private fun toIntTimeSchedule(schedule: List<String>): List<Int> {
         return listOf(toIntTime(schedule[0]), toIntTime(schedule[1]))
-    }
+    } // Time complexity: O(1) / Space complexity: O(1)
 
     private fun toIntTime(value: String): Int {
         val splittedValue = value.split(':')
         return splittedValue[0].toInt() * 60 + splittedValue[1].toInt()
-    }
+    } // Time complexity: O(1) / Space complexity: O(1)
 
     private fun joinSchedules(
         firstSchedule: List<List<Int>>,
@@ -79,7 +79,7 @@ class Schedule {
             secondIndex++
         }
         return result
-    }
+    } // Time complexity: O(n+m) / Space complexity: O(n+m)
 
     private fun mergeRanges(firstRange: List<Int>, secondRange: List<Int>): List<Int>? {
         if (firstRange[0] > secondRange[1] || secondRange[0] > firstRange[1]) {
@@ -88,7 +88,7 @@ class Schedule {
         val first = if (firstRange[0] > secondRange[0]) firstRange[0] else secondRange[0]
         val second = if (firstRange[1] < secondRange[1]) firstRange[1] else secondRange[1]
         return listOf(first, second)
-    }
+    } // Time complexity: O(1) / Space complexity: O(1)
 
     private fun findFreeTime(schedules: List<List<Int>>, availabilityRange: List<Int>): List<List<Int>> {
         val result = mutableListOf<List<Int>>()
@@ -113,21 +113,21 @@ class Schedule {
             result.add(freeTimeInEnd)
         }
         return result
-    }
+    } // Time complexity: O(n) / Space complexity: O(n)
 
     private fun findFreeTimeInStart(earlierStart: Int, availabilityStart: Int): List<Int>? {
         if (earlierStart > availabilityStart) {
             return listOf(availabilityStart, earlierStart)
         }
         return null
-    }
+    } // Time complexity: O(1) / Space complexity: O(1)
 
     private fun findFreeTimeInEnd(latestEnd: Int, availabilityEnd: Int): List<Int>? {
         if (latestEnd < availabilityEnd) {
             return listOf(latestEnd, availabilityEnd)
         }
         return null
-    }
+    } // Time complexity: O(1) / Space complexity: O(1)
 
     private fun limitFreeTime(freeTime: List<List<Int>>, availabilityRange: List<Int>): List<List<Int>> {
         val result: MutableList<List<Int>> = mutableListOf()
@@ -149,7 +149,7 @@ class Schedule {
             }
         }
         return result
-    }
+    } // Time complexity: O(n) / Space complexity: O(n)
 
     private fun toStringTimeSchedules(schedules: List<List<Int>>): List<List<String>> {
         val result = mutableListOf<List<String>>()
@@ -157,11 +157,11 @@ class Schedule {
             result.add(toStringTimeSchedule(schedule))
         }
         return result
-    }
+    } // Time complexity: O(n) / Space complexity: O(n)
 
     private fun toStringTimeSchedule(schedule: List<Int>): List<String> {
         return listOf(toStringTime(schedule[0]), toStringTime(schedule[1]))
-    }
+    } // Time complexity: O(1) / Space complexity: O(1)
 
     private fun toStringTime(value: Int): String {
         var hour = (value / 60).toString()
@@ -169,7 +169,7 @@ class Schedule {
         if (hour.length < 2) hour = "0${hour}"
         if (minutes.length < 2) minutes = "0${minutes}"
         return "${hour}:${minutes}"
-    }
+    } // Time complexity: O(1) / Space complexity: O(1)
 
     fun start() {
         val firstSchedules = listOf(listOf("09:00", "10:30"), listOf("12:00", "13:00"), listOf("16:00", "18:00"))
