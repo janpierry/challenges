@@ -1,5 +1,7 @@
+import challenges.CombinationsOfElements
 import challenges.Schedule
 
 fun main() {
-    Schedule().start();
+//    Schedule().start()
+    CombinationsOfElements().start()
 }
