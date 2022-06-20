@@ -1,5 +1,5 @@
 class ElementsCombination {
-  void solution(List<int> elements) {
+  void _solution(List<int> elements) {
     final List<List<int>> result = [[]];
     elements.forEach((element) {
       final List<List<int>> currentCombinations = [];
@@ -16,6 +16,6 @@ class ElementsCombination {
 
   void start() {
     const elements = [1, 2, 3, 4];
-    solution(elements);
+    _solution(elements);
   }
 }
