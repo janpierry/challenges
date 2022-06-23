@@ -1,7 +1,9 @@
+import 'package:challenges/challenges/counting_valleys.dart';
 import 'package:challenges/challenges/elements_combination.dart';
 import 'package:challenges/challenges/palindrome_index.dart';
 
 void main(List<String> args) {
   //ElementsCombination().start();
-  PalindromeIndex().start();
+  // PalindromeIndex().start();
+  CountingValleys().start();
 }
