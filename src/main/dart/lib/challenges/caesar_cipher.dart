@@ -20,7 +20,7 @@ class CaesarCipher {
   }
 
   void start() {
-    final result = _solution('Always-Look-on-the-Bright-Side-of-Life', 5);
+    final result = _solution('Always-Look-on-the-Bright-Side-of-Life', 53);
     print(result);
   }
 }
